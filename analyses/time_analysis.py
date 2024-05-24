@@ -35,11 +35,9 @@ def main():
         print(f"Running for {num_vertices} vertices...")
         g = create_graph(num_vertices)
         
-        # Time for MST Congestion Approximation
         mst_time, _ = run_sherman_flow(g, MstCongestionApprox, source, sink, epsilon)
         mst_times.append(mst_time)
         
-        # Time for Conductance Congestion Approximation
         conductance_time, _ = run_sherman_flow(g, ConductanceCongestionApprox, source, sink, epsilon)
         conductance_times.append(conductance_time)
 

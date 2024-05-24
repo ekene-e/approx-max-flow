@@ -21,17 +21,15 @@ def main():
     # alternatively can use ConductanceCongestionApprox:
     cong_approx = ConductanceCongestionApprox(g)
 
-    # Initialize the ShermanFlow algorithm
     sherman_flow = ShermanFlow(g, cong_approx)
 
-    # Run the max flow algorithm
+    # run max flow
     source = 0
     sink = 1
     start_time = time.time()
     flow, flow_value = sherman_flow.max_st_flow(source, sink, epsilon)
     end_time = time.time()
 
-    # Output results
     print(f"Max flow value: {flow_value}")
     print(f"Flow distribution: {flow}")
     print(f"Elapsed time: {end_time - start_time} seconds")
